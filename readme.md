@@ -81,22 +81,6 @@ freertos-learn/
 
 ## Building and Flashing
 
-### Using ESP-IDF
-
-```bash
-# Configure the project
-idf.py menuconfig
-
-# Build the project
-idf.py build
-
-# Flash to ESP32
-idf.py flash
-
-# Monitor serial output
-idf.py monitor
-```
-
 ### Using PlatformIO
 
 ```bash
@@ -118,8 +102,8 @@ The project outputs debug information via UART:
 Starting DS3231 RTC + VK16K33C Display
 I2C initialized successfully
 DS3231 initialization failed!
-Current Time: 2024-05-13 17:53:00
-Current Time: 2024-05-13 17:53:01
+Current Time: 2014-05-13 17:53:00
+Current Time: 2014-05-13 17:53:01
 ...
 ```
 
@@ -127,7 +111,7 @@ Current Time: 2024-05-13 17:53:01
 
 ### Setting Initial Time
 
-The DS3231 is initialized with a default time in the `ds3231_init()` function. To set a different initial time, modify the `current_time_cmd` array in the DS3231 initialization:
+The DS3231 is initialized with a default time in the `ds3231_init()` function. To set a different initial time, modify the `current_time_cmd` array in the DS3231 initialization (2014/05/13 17:53:00 for example):
 
 ```c
 uint8_t current_time_cmd[8] = {
@@ -138,7 +122,7 @@ uint8_t current_time_cmd[8] = {
     0x02, // day of week (1-7)
     0x13, // date (BCD)
     0x05, // month (BCD)
-    0x24  // year (BCD, 20xx)
+    0x14  // year (BCD, 20xx)
 };
 ```
 
@@ -172,7 +156,7 @@ The VK16K33C display brightness and other settings can be configured in the `vk1
 
 ## Dependencies
 
-- ESP-IDF v4.4 or later
+- ESP-IDF v5.4.2 or later
 - FreeRTOS (included with ESP-IDF)
 - ESP32 I2C Master driver
 
