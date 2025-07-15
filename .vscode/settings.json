@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.ino": "c",
+        "freertos.h": "c",
+        "cstdint": "c",
+    }
+}
