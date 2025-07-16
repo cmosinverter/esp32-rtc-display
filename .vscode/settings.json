@@ -3,5 +3,6 @@
         "*.ino": "c",
         "freertos.h": "c",
         "cstdint": "c",
+        "event_groups.h": "c"
     }
 }
